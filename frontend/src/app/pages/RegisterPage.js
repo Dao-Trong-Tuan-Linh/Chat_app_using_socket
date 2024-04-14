@@ -19,7 +19,7 @@ export default function RegisterPage() {
           <button>Đăng ký</button>
         </form>
         <p>
-          Bạn đã có tài khoản? <Link to="/dang-nhap">Đăng nhập</Link>
+          Bạn đã có tài khoản? <Link href="/dang-nhap">Đăng nhập</Link>
         </p>
       </div>
     </div>

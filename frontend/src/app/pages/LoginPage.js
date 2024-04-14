@@ -13,7 +13,7 @@ export default function LoginPage() {
           <button>Đăng nhập</button>
           
         </form>
-        <p>Bạn chưa có tài khoản ? <Link to="/dang-ky">Đăng ký</Link></p>
+        <p>Bạn chưa có tài khoản ? <Link href="/dang-ky">Đăng ký</Link></p>
       </div>
     </div>
   )
