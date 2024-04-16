@@ -26,9 +26,7 @@ export const signupController = async (req,res) => {
             password:hashedPassword,
             avatar
         })
-        res.status(StatusCodes.CREATED).json({result:'Đã đăng ký thành công'})
-
-
+        if(user) res.status(StatusCodes.CREATED).json({result:'Đã đăng ký thành công'})
     } catch (error) {
         res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({error:'Something went wrong'})
     }
