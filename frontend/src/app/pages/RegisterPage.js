@@ -23,7 +23,7 @@ export default function RegisterPage() {
       const storageRef = ref(storage,`user/${uuid()}`)
       uploadBytes(storageRef,img).then((snapshot) => {
         getDownloadURL(snapshot.ref).then(async (url) => {
-          const result = await axiosClient.post('/signup',{name,email,password,avatar:url})
+          const result = await axiosClient.post('/auth/signup',{name,email,password,avatar:url})
           if(result) router.push('/dang-nhap')
         })
       })

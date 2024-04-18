@@ -22,7 +22,7 @@ app.use(morgan('dev'))
 
 
 //routes
-app.use('/api/v1',auth)
+app.use('/api/v1/auth',auth)
 // app.use(express.static(path.join(__dirname,"/frontend/dist")))
 
 // app.get('*',(req,res) => {

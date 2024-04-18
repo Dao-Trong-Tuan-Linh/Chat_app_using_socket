@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getAuthUser } from "../util/localstorage";
+import { getToken } from "../util/localstorage";
 
 const axiosClient = axios.create({
     baseURL:'http://localhost:8000/api/v1',
@@ -10,8 +10,9 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(async (config) => {
     let headerAuth = '';
-    if(getAuthUser() !== null) {
-        const {token} = getAuthUser() ?? ''
+    const token = JSON.parse(getToken())
+    if(token) {
+        headerAuth = token
     }
         config.headers.Authorization = `Bearer ${headerAuth}`;
         
