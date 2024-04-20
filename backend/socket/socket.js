@@ -11,4 +11,8 @@ const io = new Server(server,{
     }
 })
 
+io.on("connection", (socket) => {
+    // ...
+  });
+
 export {app, io, server}

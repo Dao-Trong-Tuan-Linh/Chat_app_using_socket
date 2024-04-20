@@ -3,10 +3,8 @@ import {StatusCodes} from "http-status-codes"
 
 export const requireSignIn = (req,res,next) => {
     const auth = req.headers.authorization;
-    console.log(auth)
     if(auth) {
-        const token = auth.split('Bearer ')[1].trim()
-        console.log(token)
+        const token = auth.split('Bearer ')[1]
         if(token) {
             try {
                 const user =  jwt.verify(token,process.env.SECRET_KEY)

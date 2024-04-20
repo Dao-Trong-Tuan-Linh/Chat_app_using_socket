@@ -8,6 +8,7 @@ import { app,server } from "./socket/socket.js";
 import connectDB from "./db/db.js";
 
 import auth from "./route/authRoute.js"
+import user from "./route/userRoute.js"
 const PORT = process.env.PORT || 8000
 
 const __dirname = path.resolve()
@@ -23,6 +24,7 @@ app.use(morgan('dev'))
 
 //routes
 app.use('/api/v1/auth',auth)
+app.use('/api/v1/user',user)
 // app.use(express.static(path.join(__dirname,"/frontend/dist")))
 
 // app.get('*',(req,res) => {
