@@ -1,7 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState} from "react";
 import Link from "next/link";
-import { setToken, setUser } from "../util/localstorage";
+import { getUser, setToken, setUser } from "../util/localstorage";
 import { useRouter } from "next/navigation";
 import axiosClient from '../api/axiosConf'
 
@@ -18,14 +18,11 @@ export default function LoginPage() {
       const {data} = await axiosClient.post("/auth/login", { email, password });
       const {result} = data
     
-      if (result) {
-        console.log(result)
-        const token = JSON.stringify(result.token)
+      const token = JSON.stringify(result.token)
         setToken(token);
         const user = JSON.stringify({ name: result.name,avatar:result.avatar})
         setUser(user);
         router.push("/");
-      }
     } catch (error) {
       console.log(error);
     }

@@ -9,8 +9,7 @@ const useTokenChecker = () => {
   useEffect(() => {
     const checkTokenExpiration = () => {
       if (decodeToken()) {
-        const { exp } = decodeToken();
-
+        const { exp} = decodeToken();
         // Check if token has expired
         if (exp < new Date().getTime() / 1000) {
           // Token expired, delete token and user info

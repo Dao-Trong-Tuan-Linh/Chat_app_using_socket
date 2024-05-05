@@ -5,14 +5,10 @@ import { getUser } from "../util/localstorage";
 export const UserContext = createContext();
 
 export const UserContextProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const userInfo = JSON.parse(getUser())
-    if (userInfo) setUser(userInfo);
-  }, []);
+  const initialUser = JSON.parse(getUser()) ?? null;
+  const [user, setCurrentUser] = useState(initialUser);
 
   return (
-    <UserContext.Provider value={{user}}>{children}</UserContext.Provider>
+    <UserContext.Provider value={{user,setCurrentUser}}>{children}</UserContext.Provider>
   );
 };

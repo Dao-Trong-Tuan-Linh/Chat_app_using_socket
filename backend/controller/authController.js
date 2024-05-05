@@ -69,7 +69,7 @@ export const loginController = async (req, res) => {
 
     res
       .status(StatusCodes.OK)
-      .json({ result: {userId:user._id,name: user.name, avatar:user.avatar, token }});
+      .json({ result: {name: user.name, avatar:user.avatar, token }});
   } catch (error) {
     res
       .status(StatusCodes.INTERNAL_SERVER_ERROR)

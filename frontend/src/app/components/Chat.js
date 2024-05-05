@@ -6,7 +6,6 @@ export default function Chat() {
   return (
     <div className="chat">
       <div className="chatInfo">
-        {/* <span>{data.user?.displayName}</span> */}
         <div className="chatIcons">
           <img src={'/cam.png'} alt="" />
           <img src={'/add.png'} alt="" />
